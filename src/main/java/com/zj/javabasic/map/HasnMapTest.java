@@ -11,4 +11,7 @@ import java.util.HashMap;
 
 public class HasnMapTest {
     private HashMap hashMap;
+    public void test(){
+        System.out.println("hello");
+    }
 }
