@@ -32,6 +32,9 @@ public class BasicType {
     }
 
     public static void main(String[] args) {
-        BasicType.byteOperation();
+
+        String[] s=new String[]{""};
+        logger.info(s.length+"");
+        //BasicType.byteOperation();
     }
 }

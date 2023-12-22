@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @package: com.zj.javabasic.io
  * @className: OutputStreamDemo
  * @author: By zhangjun
- * @description: 字节流-输出流
+ * @description: 字节流-输出流；字节流是一个字节一个字节的输出
  * @date: 2023/11/13 8:16
  * @version: 1.0
  */
@@ -37,6 +37,9 @@ public class OutputStreamDemo {
 
     public static void main(String[] args) {
         File file=new File("D:\\Download\\output.txt");
-        OutputStreamDemo.writeFile(file);
-    }
+        for (int i = 0; i <1000 ; i++) {
+            OutputStreamDemo.writeFile(file);
+        }
+        }
+
 }

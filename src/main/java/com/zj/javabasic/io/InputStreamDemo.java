@@ -4,9 +4,7 @@ import com.zj.javabasic.fors.ForDemo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Arrays;
 
 /**
@@ -38,7 +36,7 @@ public class InputStreamDemo {
             //Integer a = inputStream.read(b);
             int length=0;
             //a=-1代表没有字节了 while里 如果写成去a！=-1会死循环
-            while((length=inputStream.read(b))!=-1){
+            while((inputStream.read(b))!=-1){
                 logger.info("将字节数组转换为中文:{}", new String(b, "UTF-8"));
             }
             //关闭流
@@ -52,6 +50,28 @@ public class InputStreamDemo {
     }
     public static void main(String[] args) {
         InputStreamDemo.readFile();
+        String filePath = "D:\\Download\\output.txt";
+        for (int i = 0; i <100 ; i++) {
+            try {
+                RandomAccessFile file = new RandomAccessFile(filePath, "r");
+                long randomPosition = (long) (Math.random() * file.length());
+                file.seek(randomPosition);
+                file.readLine(); // 可能需要读取一行以调整到下一行的开头
+                String randomLine = file.readLine();
+                if (randomLine != null) {
+                    System.out.println("Random line: " + randomLine);
+                } else {
+                    System.out.println("End of file reached.");
+                }
+                file.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
+
+
 
 }
