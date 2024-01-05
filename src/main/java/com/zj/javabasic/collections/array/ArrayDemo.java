@@ -1,6 +1,7 @@
 package com.zj.javabasic.collections.array;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -16,29 +17,17 @@ import java.util.stream.Collectors;
  */
 public class ArrayDemo {
     public static void main(String[] args) {
-       List<String> s=new ArrayList<>();
+       List<Integer> s=new ArrayList<>();
 
-       s.add(0,null);
-       s.add(1,"1");
-       s.add(2,null);
-       s.add(3,"1");
-       s.add(4,"1");
+       s.add(0,1);
 
-        List<String> n=new ArrayList<>();
 
-        n.add(0,"2");
-        n.add(1,null);
-        n.add(2,"2");
-        n.add(3,null);
-        n.add(4,null);
+        List<Integer> n=new ArrayList<>();
 
-        for (int i = 0; i < s.size(); i++) {
-            if (s.get(i)==null) {
-                s.set(i,n.get(i));
-            }
-        }
-        System.out.println(s);
-        //List<String> newList = s.stream().filter(e-> null != e).collect(Collectors.toList());
-        //System.out.println(newList);
+
+       Integer a= Collections.max(s)+1;
+       //Integer b= Collections.max(n)+1;
+        System.out.println(a);
+        //System.out.println(b);
     }
 }

@@ -1,11 +1,10 @@
-package com.zj.javabasic.fors;
+package com.zj.javabasic.loops;
 
 import com.google.common.base.Joiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,7 +23,13 @@ public class ForDemo {
      */
     public static void getForFlow(){
         for (int i = 0; i <20 ; i++) {
-            logger.info("循环变量，i:{}",i);
+            try {
+                boolean b = i % 2 == 0;
+                int c = i / 0;
+                //logger.info("循环变量，i:{}",i);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
     /**
@@ -33,12 +38,6 @@ public class ForDemo {
 
 
     public static void main(String[] args) {
-       List<String> list=new ArrayList<>();
-       list.add("1");
-       list.add("2");
-       list.add("3");
-       list.add("4");
-       String s=Joiner.on(",").join(list);
-       System.out.println(s);
+       getForFlow();
     }
 }
